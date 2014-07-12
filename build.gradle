@@ -35,4 +35,4 @@ jettyRun {
   }
 }
 
-task stage(dependsOn: ['clean', 'jettyRun'])
+task stage(dependsOn: ['clean', 'build'])
