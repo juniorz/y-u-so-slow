@@ -27,3 +27,12 @@ dependencies {
 
     testCompile "junit:junit:4.11"
 }
+
+def HTTP_PORT = System.env.PORT?.trim()
+jettyRun {
+  if (HTTP_PORT) {
+    httpPort = HTTP_PORT.toInteger()
+  }
+}
+
+task stage(dependsOn: ['clean', 'jettyRun'])
