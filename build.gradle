@@ -37,7 +37,7 @@ dependencies {
 task copyToLib << {
   copy {
     from configurations.runtimeOnly.copy().setTransitive(false)
-    into "$buildDir/libs"
+    into "$buildDir/runtime"
     rename { name ->
       def artifacts = configurations.runtimeOnly.resolvedConfiguration.resolvedArtifacts
       def artifact = artifacts.find { it.file.name == name }
